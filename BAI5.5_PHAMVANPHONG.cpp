@@ -3,6 +3,7 @@
 #include<iomanip>
 #include<math.h>
 using namespace std;
+
 class MayGiat{
 private:
 	char Brand[30];
