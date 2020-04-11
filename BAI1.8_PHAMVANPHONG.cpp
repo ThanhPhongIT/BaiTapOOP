@@ -3,7 +3,6 @@
 #include<math.h>
 #include <iomanip>
 using namespace std;
-
 class CanBo{
 private:
     char MaCanBo[5];
