@@ -92,7 +92,5 @@ int main(){
             pt->xuat();
         }
     }
-
-
     return 0;
 }
