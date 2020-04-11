@@ -22,7 +22,7 @@ void CanBo::nhap(){
     cout<<"Nhập số ngày làm việc: ";
 }
 int tinhLuong(){
-
+    long luong;
 }
 void xuat(){
 
