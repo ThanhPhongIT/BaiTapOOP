@@ -7,38 +7,15 @@ using namespace std;
 class Date{
 private:
 	int day, month, year;
-public:
-	void nhap();
-	void xuat();
 	friend class TIVI;
 };
-void Date::nhap(){
-	cout<<"Nhap vao ngay: ";		cin>>day;
-	cout<<"Nhap vao thang: ";		cin>>month;
-	cout<<"Nhap vao nam: ";		cin>>year;
-}
-void Date::xuat(){
-	cout<<setw(7)<<day;
-	cout<<setw(7)<<month;
-	cout<<setw(7)<<year;
-}
 class NSX{
 private:
 	char tenNSX[20];
 	char diaChi[20];
-public:
-	void nhap();
-	void xuat();
 	friend class Hang;
 };
-void NSX::nhap(){
-	cout<<"Nhap ten NSX Tivi: ";			fflush(stdin);		gets(tenNSX);
-	cout<<"Nhap dia chi NSX Tivi: ";		fflush(stdin);		gets(diaChi);
-}
-void NSX::xuat(){
-	cout<<setw(20)<<tenNSX;
-	cout<<setw(20)<<diaChi;
-}
+
 class Hang{
 protected:
 	char tenHang[15];
@@ -48,12 +25,14 @@ public:
 	void xuat();
 };
 void Hang::nhap(){
-	cout<<"Nhap vao ten hang: ";		fflush(stdin);		gets(tenHang);
-	x.nhap();
+	cout<<"Nhap vao ten hang: ";			fflush(stdin);		gets(tenHang);
+	cout<<"Nhap ten NSX Tivi: ";			fflush(stdin);		gets(x.tenNSX);
+	cout<<"Nhap dia chi NSX Tivi: ";		fflush(stdin);		gets(x.diaChi);
 }
 void Hang::xuat(){
 	cout<<setw(15)<<tenHang;
-	x.xuat();
+	cout<<setw(20)<<x.tenNSX;
+	cout<<setw(20)<<x.diaChi;
 }
 class TIVI:public Hang{
 protected:
@@ -65,12 +44,16 @@ public:
 };
 void TIVI::nhap(){
 	Hang::nhap();
-	NgayNhap.nhap();
+	cout<<"Nhap vao ngay: ";		cin>>NgayNhap.day;
+	cout<<"Nhap vao thang: ";		cin>>NgayNhap.month;
+	cout<<"Nhap vao nam: ";			cin>>NgayNhap.year;
 	cout<<"Nhap vao kich thuoc TV: ";		fflush(stdin);		gets(kichThuoc);
 }
 void TIVI::xuat(){
 	Hang::xuat();
-	NgayNhap.xuat();
+	cout<<setw(7)<<NgayNhap.day;
+	cout<<setw(7)<<NgayNhap.month;
+	cout<<setw(7)<<NgayNhap.year;
 	cout<<setw(14)<<kichThuoc;
 }
 void title(){
